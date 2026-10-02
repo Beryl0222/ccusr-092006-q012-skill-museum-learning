@@ -1,9 +1,28 @@
 {
   "event_id": "sample-012-001",
   "kind": "GROUP_REQUESTED",
-  "occurred_at": "2026-09-20T09:00:00+08:00",
+  "occurred_at": "2026-10-01T09:00:00+08:00",
   "subject_id": "demo-012",
   "payload": {
-    "note": "虚构资料，仅用于格式核对"
+    "group": {
+      "id": "demo-012",
+      "school_name": "虚构示例学校",
+      "teacher_name": "示例老师"
+    },
+    "visit_date": "2026-10-15",
+    "visit_window": { "start_min": 540, "end_min": 720 },
+    "learning_objectives": [
+      { "tag": "robotics", "priority": "must" },
+      { "tag": "craft", "priority": "want" }
+    ],
+    "age_bands": [
+      { "label": "初一", "min_age": 12, "max_age": 13, "students": 16 }
+    ],
+    "party_size": 18,
+    "chaperones": 2,
+    "accessibility_needs": { "wheelchair_users": 1 },
+    "splittable": true,
+    "teacher_token": "demo-teacher-token",
+    "note": "虚构资料，仅用于格式核对，不含真实个人信息"
   }
 }

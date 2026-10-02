@@ -1,10 +1,15 @@
 {
   "name": "skill-museum-learning",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "技能研学资源编排领域资料",
+  "description": "世界技能博物馆研学高峰资源编排后端：轮转规划、暂存释放、容量校验、突发重规划与安全红线",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "start": "node src/http.js",
+    "demo": "node scripts/demo.js"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

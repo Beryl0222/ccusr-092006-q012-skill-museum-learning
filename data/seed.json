@@ -1,0 +1,106 @@
+{
+  "_note": "虚构数据：世界技能博物馆研学日 2026-10-15（周六），时间均为当日 0 点起的分钟数。9:00=540，12:00=720。",
+  "date": "2026-10-15",
+  "museum_open": { "start_min": 540, "end_min": 900 },
+  "corridors": [
+    { "id": "corr-a-b", "name": "中央连廊 A↔B", "connects_zones": ["A-智造", "B-木艺"], "capacity": 40, "accessible": true, "travel_min": 3 },
+    { "id": "corr-b-c", "name": "木艺长廊 B↔C", "connects_zones": ["B-木艺", "C-生活"], "capacity": 30, "accessible": true, "travel_min": 4 },
+    { "id": "corr-a-c", "name": "备用通道 A↔C", "connects_zones": ["A-智造", "C-生活"], "capacity": 20, "accessible": false, "travel_min": 5 }
+  ],
+  "stations": [
+    {
+      "id": "robotics", "name": "机器人协作站", "zone": "A-智造", "corridor_id": "corr-a-b",
+      "tags": ["robotics", "automation", "future-skills"],
+      "age_min": 10, "age_max": 18, "risk_level": "high", "requires_instructor": true,
+      "duration_min": 25, "changeover_min": 10,
+      "devices": 6, "people_per_device": 2, "safety_capacity": 12, "accessible_bays": 2
+    },
+    {
+      "id": "cnc", "name": "数字加工体验站", "zone": "A-智造", "corridor_id": "corr-a-b",
+      "tags": ["digital-fabrication", "automation"],
+      "age_min": 12, "age_max": 18, "risk_level": "medium", "requires_instructor": true,
+      "duration_min": 20, "changeover_min": 8,
+      "devices": 4, "people_per_device": 1, "safety_capacity": 6, "accessible_bays": 1
+    },
+    {
+      "id": "woodwork", "name": "木工手作站", "zone": "B-木艺", "corridor_id": "corr-b-c",
+      "tags": ["craft", "traditional-skills", "materials"],
+      "age_min": 8, "age_max": 18, "risk_level": "high", "requires_instructor": true,
+      "duration_min": 30, "changeover_min": 10,
+      "devices": 8, "people_per_device": 1, "safety_capacity": 10, "accessible_bays": 1
+    },
+    {
+      "id": "weaving", "name": "织造与纹样站", "zone": "B-木艺", "corridor_id": "corr-b-c",
+      "tags": ["craft", "traditional-skills", "art-design"],
+      "age_min": 6, "age_max": 18, "risk_level": "low",
+      "duration_min": 20, "changeover_min": 5,
+      "devices": 10, "people_per_device": 1, "safety_capacity": 12, "accessible_bays": 3
+    },
+    {
+      "id": "pastry", "name": "烘焙演示站", "zone": "C-生活", "corridor_id": "corr-a-c",
+      "tags": ["hospitality", "food", "daily-life"],
+      "age_min": 6, "age_max": 18, "risk_level": "medium", "requires_instructor": true,
+      "duration_min": 25, "changeover_min": 10,
+      "devices": 5, "people_per_device": 2, "safety_capacity": 10, "accessible_bays": 2
+    },
+    {
+      "id": "fashion", "name": "服饰设计站", "zone": "C-生活", "corridor_id": "corr-a-c",
+      "tags": ["art-design", "fashion", "daily-life"],
+      "age_min": 6, "age_max": 18, "risk_level": "low",
+      "duration_min": 20, "changeover_min": 5,
+      "devices": 8, "people_per_device": 1, "safety_capacity": 12, "accessible_bays": 2
+    }
+  ],
+  "instructors": [
+    { "id": "ins-zhao", "name": "赵老师（机器人/数字加工）", "qualifications": ["robotics", "cnc", "high-risk", "medium-risk"] },
+    { "id": "ins-qian", "name": "钱老师（机器人）", "qualifications": ["robotics", "high-risk"] },
+    { "id": "ins-sun", "name": "孙老师（木艺）", "qualifications": ["woodwork", "high-risk"] },
+    { "id": "ins-li", "name": "李老师（木艺/织造）", "qualifications": ["woodwork", "weaving", "high-risk", "low-risk"] },
+    { "id": "ins-zhou", "name": "周老师（生活技能）", "qualifications": ["pastry", "fashion", "medium-risk", "low-risk"] }
+  ],
+  "groups": [
+    {
+      "_note": "上海市启航中学：42 名学生（初中段为主 + 少量小学高年级），2 名轮椅学生，可拆 3 队。",
+      "group": {
+        "id": "grp-qihang", "school_name": "上海市启航中学", "teacher_name": "王老师"
+      },
+      "visit_date": "2026-10-15",
+      "visit_window": { "start_min": 540, "end_min": 750 },
+      "learning_objectives": [
+        { "tag": "robotics", "priority": "must" },
+        { "tag": "traditional-skills", "priority": "want" },
+        { "tag": "art-design", "priority": "bonus" }
+      ],
+      "age_bands": [
+        { "label": "小学高年级", "min_age": 11, "max_age": 12, "students": 8 },
+        { "label": "初一", "min_age": 12, "max_age": 13, "students": 18 },
+        { "label": "初二", "min_age": 13, "max_age": 14, "students": 16 }
+      ],
+      "party_size": 45,
+      "chaperones": 3,
+      "accessibility_needs": { "wheelchair_users": 2, "note": "两名轮椅学生需无障碍工位与通道" },
+      "splittable": true,
+      "max_subteam_size": 16
+    },
+    {
+      "_note": "星光小学：低年级小团，主要体验低风险站。",
+      "group": {
+        "id": "grp-xingguang", "school_name": "星光小学", "teacher_name": "陈老师"
+      },
+      "visit_date": "2026-10-15",
+      "visit_window": { "start_min": 570, "end_min": 720 },
+      "learning_objectives": [
+        { "tag": "craft", "priority": "want" },
+        { "tag": "daily-life", "priority": "want" }
+      ],
+      "age_bands": [
+        { "label": "二年级", "min_age": 7, "max_age": 8, "students": 12 }
+      ],
+      "party_size": 14,
+      "chaperones": 2,
+      "accessibility_needs": { "wheelchair_users": 0 },
+      "splittable": true,
+      "max_subteam_size": 10
+    }
+  ]
+}
